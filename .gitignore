@@ -10,8 +10,9 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-
-### Linux ###
+api/__init__.py
+api/migrations/__init__.py
+test_department/__init__.py
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file

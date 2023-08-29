@@ -11,12 +11,14 @@ class Department(models.Model):
 
 
 class Employee(models.Model):
-    initials = models.TextField(max_length=50, verbose_name='ФИО')
+    surname = models.CharField(max_length=20, verbose_name='Фамилия')
+    first_name = models.CharField(max_length=20, verbose_name='Имя')
+    last_name = models.CharField(max_length=20, verbose_name='Отчество')
     photo = models.ImageField(upload_to='upload/employee_photos/', verbose_name='Фото работника')
-    position = models.TextField(max_length=20, verbose_name='Должность')
+    position = models.CharField(max_length=50, verbose_name='Должность')
     salary = models.IntegerField(verbose_name='Зарплата')
     age = models.IntegerField(verbose_name='Возраст')
     departament = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.initials
+        return self.surname
