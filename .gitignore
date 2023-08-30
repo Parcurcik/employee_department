@@ -10,8 +10,8 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-api/__init__.py
-api/migrations/__init__.py
+api_v1/__init__.py
+api_v1/migrations/girt
 test_department/__init__.py
 *~
 

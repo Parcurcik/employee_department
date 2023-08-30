@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Department(models.Model):
-    department_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20, verbose_name='Название департамента')
     director = models.CharField(max_length=100, verbose_name='Контакты директора департамента')
 
@@ -17,7 +16,7 @@ class Employee(models.Model):
     photo = models.ImageField(upload_to='upload/employee_photos/', verbose_name='Фото работника')
     position = models.CharField(max_length=50, verbose_name='Должность')
     salary = models.IntegerField(verbose_name='Зарплата')
-    age = models.IntegerField(verbose_name='Возраст')
+    birthday = models.DateField(verbose_name='Дата рождения')
     departament = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
