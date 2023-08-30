@@ -11,8 +11,9 @@ local_settings.py
 db.sqlite3
 media
 api_v1/__init__.py
-api_v1/migrations/girt
+api_v1/migrations/
 test_department/__init__.py
+
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file

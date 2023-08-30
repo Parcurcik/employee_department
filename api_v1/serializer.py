@@ -12,11 +12,13 @@ class DepartmentSerializer(serializers.ModelSerializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     departament = DepartmentSerializer()
     full_name = serializers.SerializerMethodField()
+    age = serializers.SerializerMethodField()
+
     photo = serializers.URLField()
 
     class Meta:
         model = Employee
-        fields = ['full_name', 'photo', 'position', 'salary', 'birthday', 'departament']
+        fields = '__all__'
 
     @staticmethod
     def get_full_name(obj):
