@@ -25,7 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api_v1',
     'rest_framework',
+    'django_filters'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,12 +1,11 @@
 from django.contrib import admin
 from rest_framework import routers
 from django.urls import include, path
-from api_v1.views import EmployeeViewSet, DepartmentViewSet
+from api_v1.department.viewset import DepartmentViewSet
+from api_v1.employee.viewset import EmployeeViewSet
 
 router = routers.SimpleRouter()
 router.register(f'employees', EmployeeViewSet, basename='employee')
-# router.register(f'users/add', UserAddView)
-# router.register(f'users/delete', UserDeleteView)
 router.register(f'departments', DepartmentViewSet)
 
 urlpatterns = [
