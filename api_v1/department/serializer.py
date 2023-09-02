@@ -1,8 +1,7 @@
-from rest_framework import serializers, status
+from rest_framework import serializers
 from django.db import models
 
 from api_v1.models import Department, Employee
-from api_v1.employee.serializer import EmployeeSerializer
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
