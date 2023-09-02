@@ -1,12 +1,13 @@
 from rest_framework import serializers, status
 from django.db import models
 
-from ..models import Department, Employee
+from api_v1.models import Department, Employee
+from api_v1.employee.serializer import EmployeeSerializer
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
     employees_num = serializers.SerializerMethodField()
-    amount_department = serializers.SerializerMethodField()
+    amount_salary = serializers.SerializerMethodField()
 
     class Meta:
         model = Department
@@ -17,7 +18,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
         return Employee.objects.filter(department=obj).count()
 
     @staticmethod
-    def get_amount_department(obj):
-        total_salary = Employee.objects.filter(department=obj).aggregate(total_salary=models.Sum('salary'))[
+    def get_amount_salary(obj):
+        return Employee.objects.filter(department=obj).aggregate(total_salary=models.Sum('salary'))[
             'total_salary']
-        return total_salary
+

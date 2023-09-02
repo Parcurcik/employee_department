@@ -4,6 +4,7 @@ from rest_framework.response import Response
 
 from .serializer import EmployeeSerializer
 from .filter import EmployeeFilter
+from .service import PaginationEmployees
 from api_v1.models import Employee, Department
 
 
@@ -12,6 +13,7 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     serializer_class = EmployeeSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = EmployeeFilter
+    pagination_class = PaginationEmployees
 
     def create(self, request, *args, **kwargs):
         department_id = request.data.get('department_id')
