@@ -11,7 +11,7 @@ class Department(models.Model):
 
 
 class Employee(models.Model):
-    surname = models.CharField(max_length=20, verbose_name='Фамилия')
+    surname = models.CharField(max_length=20, verbose_name='Фамилия', db_index=True)
     first_name = models.CharField(max_length=20, verbose_name='Имя')
     last_name = models.CharField(max_length=20, verbose_name='Отчество')
     photo = models.ImageField(upload_to='upload/employee_photos/', verbose_name='Фото работника')

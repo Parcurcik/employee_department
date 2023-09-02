@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 
@@ -14,6 +14,7 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = EmployeeFilter
     pagination_class = PaginationEmployees
+    permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         department_id = request.data.get('department_id')

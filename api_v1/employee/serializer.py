@@ -21,6 +21,13 @@ class EmployeeSerializer(serializers.ModelSerializer):
         fields = ['full_name', 'photo', 'position', 'salary', 'age', 'department_name', 'department_id', 'birthday',
                   'surname',
                   'first_name', 'last_name']
+        validators = [
+            serializers.UniqueTogetherValidator(
+                queryset=model.objects.all(),
+                fields=('department_id', 'surname', 'first_name', 'last_name'),
+                message="Employee already exists"
+            )
+        ]
 
     @staticmethod
     def get_full_name(obj):
