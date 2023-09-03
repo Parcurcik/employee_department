@@ -20,4 +20,3 @@ class DepartmentSerializer(serializers.ModelSerializer):
     def get_amount_salary(obj):
         return Employee.objects.filter(department=obj).aggregate(total_salary=models.Sum('salary'))[
             'total_salary']
-

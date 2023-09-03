@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'api_v1',
     'rest_framework',
     'django_filters',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'drf_yasg'
 ]
 
 REST_FRAMEWORK = {
