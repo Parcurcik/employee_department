@@ -49,8 +49,8 @@
 
 ## Запуск через Docker:
 
-      docker build -t test_drf .
-      docker run -d -p 8080:8000 django_drf
+      docker build -t test_drf 
+      docker run -d -p 8080:8000 test_drf
 
 ## Локальный запуск:
 
