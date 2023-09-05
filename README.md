@@ -47,6 +47,11 @@
 
          python manage.py drf_create_token имя_пользователя
 
+## Запуск через Docker:
+
+      docker build -t test_drf .
+      docker run -d -p 8080:8000 django_drf
+
 ## Локальный запуск:
 
 1. Устанавливаем все зависимости:
@@ -59,3 +64,5 @@
 2. Запускаем приложение:
 
         python manage.py runserver
+
+
